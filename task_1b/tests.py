@@ -26,5 +26,17 @@ class TestOptimalPlan(unittest.TestCase):
         high_risk = [10, 10, 10, 10]
         self.assertEqual(optimal_plan(low_risk, high_risk), 10)  # High risk always chosen
         print("All high risk test passed.")
+
+    def test_mixed_risk(self):
+        low_risk = [5, 5, 5, 5]
+        high_risk = [10, 10, 1, 1]
+        self.assertEqual(optimal_plan(low_risk, high_risk), 20)
+        print("Mixed risk test passed.")
+
+    def test_equal_value_all_risk(self):
+        low_risk = [5, 5, 5, 5, 5]
+        high_risk = [5, 5, 5, 5, 5]
+        self.assertEqual(optimal_plan(low_risk, high_risk), 25)
+        print("Equal value all risk test passed.")
 if __name__ == '__main__':
     unittest.main()
