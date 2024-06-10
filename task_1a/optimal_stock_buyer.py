@@ -2,6 +2,7 @@ def when_to_buy(prices):
     # Ensuring that the list is in the proper range
     if not (2 <= len(prices) < 8):
         raise ValueError("Number of prices must be between 2 and 7 for this function to work properly.")
+    print(f"Calculating transactions for prices: {prices}")
 
     # Resulting string will be stored here
     result = []
@@ -14,8 +15,7 @@ def when_to_buy(prices):
         if prices[i] > prices[i - 1]:
             result.append((i - 1, i))
             print(f"Transaction found: Buy on day {i}, Sell on day {i + 1}")
-    return prices
+    return result
 
-prices = [45, 20, 30, 35, 32]
+prices = [5, 3, 2, 5, 6, 1, 4]
 transactions = when_to_buy(prices)
-
