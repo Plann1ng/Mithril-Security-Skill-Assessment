@@ -38,5 +38,11 @@ class TestOptimalPlan(unittest.TestCase):
         high_risk = [5, 5, 5, 5, 5]
         self.assertEqual(optimal_plan(low_risk, high_risk), 25)
         print("Equal value all risk test passed.")
+
+    def test_single_element(self):
+        low_risk = [10]
+        high_risk = [20]
+        self.assertEqual(optimal_plan(low_risk, high_risk), 10)
+        print("Single element test passed.")
 if __name__ == '__main__':
     unittest.main()
