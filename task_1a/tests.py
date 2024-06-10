@@ -18,5 +18,13 @@ class TestWhenToBuy(unittest.TestCase):
         self.assertEqual(result, expected_result)
         print("Test passed.") if result == expected_result else print("Test failed.")
 
+    def test_random_prices(self):
+        print("Testing random prices...")
+        prices = [5, 3, 2, 5, 6, 1, 4]
+        expected_result = [(2, 3), (3, 4), (5, 6)]
+        result = when_to_buy(prices)
+        self.assertEqual(result, expected_result)
+        print("Test passed.") if result == expected_result else print("Test failed.")
+
 if __name__ == '__main__':
     unittest.main()
